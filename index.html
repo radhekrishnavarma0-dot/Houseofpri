@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="House of Pri is a founder-led digital creative studio designing thoughtful websites for ambitious brands.">
+<title>House of Pri — Digital Creative Studio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap">
+<style>
+:root{--bg:#F5F0E8;--fg:#171717;--card:#FFFFFF;--mut:#5c4f3f;--line:#C8B9A6;--acc:#8A765E;--btnfg:#F5F0E8;--btn:#171717;--serif:"Cormorant Garamond",Georgia,serif;--sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171717;--fg:#F5F0E8;--card:#222;--mut:#C8B9A6;--line:#3a3530;--acc:#C8B9A6;--btnfg:#171717;--btn:#F5F0E8}}
+:root[data-theme="dark"]{--bg:#171717;--fg:#F5F0E8;--card:#222;--mut:#C8B9A6;--line:#3a3530;--acc:#C8B9A6;--btnfg:#171717;--btn:#F5F0E8}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 var(--sans)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.6rem,9vw,4.6rem)}h2{font-size:clamp(1.9rem,6vw,2.8rem)}h3{font-size:1.5rem}
+a{color:inherit}p{margin:0 0 1em;color:var(--mut)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:12px}
+.logo{font-family:var(--serif);font-size:1.5rem;font-weight:600;text-decoration:none}
+nav ul{display:none;list-style:none;margin:0;padding:0;gap:22px}nav ul.open{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:100%;background:var(--bg);padding:16px 20px;border-bottom:1px solid var(--line)}
+nav a{text-decoration:none;font-size:.9rem;letter-spacing:.04em}nav a:hover{color:var(--acc)}
+#menu{background:none;border:1px solid var(--line);color:var(--fg);padding:8px 12px;border-radius:2px;font:inherit;cursor:pointer}
+@media(min-width:820px){nav ul{display:flex!important;flex-direction:row;position:static;padding:0;border:0}#menu{display:none}}
+.btn{display:inline-block;padding:13px 24px;background:var(--btn);color:var(--btnfg);text-decoration:none;border:1px solid var(--btn);font:500 .9rem var(--sans);letter-spacing:.05em;cursor:pointer;transition:opacity .2s}
+.btn.alt{background:transparent;color:var(--fg);border-color:var(--fg)}.btn:hover{opacity:.82}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:12px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);padding:24px}
+.badge{display:inline-block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--acc);color:var(--acc);padding:2px 8px}
+.mock{position:relative;margin-top:48px;padding-bottom:40px}
+.desk{background:var(--card);border:1px solid var(--line);max-width:760px;box-shadow:0 20px 40px rgba(0,0,0,.08)}
+.bar{display:flex;gap:6px;padding:10px;border-bottom:1px solid var(--line)}.bar i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.scr{padding:24px;display:grid;gap:10px}.scr b{display:block;height:10px;background:var(--line);width:60%}.scr b.l{height:26px;background:var(--fg);width:45%}.scr s{height:90px;background:var(--bg);border:1px solid var(--line)}
+.phone{position:absolute;right:4%;bottom:0;width:120px;background:var(--card);border:1px solid var(--fg);border-radius:18px;padding:12px;display:grid;gap:8px;box-shadow:0 16px 30px rgba(0,0,0,.12)}.phone b{height:8px;background:var(--line)}.phone b.l{height:18px;background:var(--fg);width:70%}.phone s{height:60px;background:var(--bg);border:1px solid var(--line)}
+.thumb{height:150px;margin:-24px -24px 20px;display:grid;place-items:center;font:600 1.6rem var(--serif);color:#F5F0E8}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}.filters button{background:none;border:1px solid var(--line);color:var(--fg);padding:8px 16px;font:inherit;font-size:.85rem;cursor:pointer}.filters button[aria-pressed=true]{background:var(--btn);color:var(--btnfg)}
+ul.d{padding-left:18px;color:var(--mut)}
+form{display:grid;gap:16px;max-width:620px}label{display:grid;gap:6px;font-size:.9rem}
+input,select,textarea{font:inherit;padding:12px;border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:0;width:100%}
+.err{color:#b3261e;font-size:.82rem;min-height:1em}.note{border-left:3px solid var(--acc);padding:10px 14px;background:var(--card);font-size:.88rem}
+.hp{position:absolute;left:-9999px}
+footer{padding:48px 0;font-size:.88rem}footer .grid{align-items:start}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="logo" href="#/" id="logo"></a>
+<nav aria-label="Main"><ul id="links"></ul></nav>
+<button id="menu" aria-expanded="false" aria-controls="links">Menu</button></div></header>
+<main id="app" tabindex="-1"></main>
+<footer><div class="wrap" id="foot"></div></footer>
+
+<script>
+/* ============================================================
+   EDIT YOUR WEBSITE HERE — change only the text inside quotes.
+   Everything on the site is drawn from this CONTENT block.
+   Leave "email" empty until you add your real address.
+   Items marked [OWNER TO CONFIRM] need your input.
+   ============================================================ */
+const CONTENT = {
+  brand: "House of Pri",
+  tagline: "A Home for Ambitious Brands.",
+  email: "",                      // e.g. "hello@yourdomain.com" (required for the contact form to work)
+  social: [],                     // e.g. [{label:"Instagram", url:"https://instagram.com/yourhandle"}]
+  hero: { title: "Your Vision. Our Design.", text: "We create thoughtful digital experiences for ambitious brands.", cta1: "Start a Project", cta2: "Explore Our Work" },
+  intro: "House of Pri is a founder-led digital creative studio. We design and build websites for cafés, jewellery and fashion labels, beauty brands, local businesses and independent founders — with clear goals, careful design and straightforward communication.",
+  about: [
+    "House of Pri is a founder-led creative studio. Every project is shaped directly by Pri, so the person you speak to at the start is the person who guides the work.",
+    "Our approach balances three things: creativity that gives a brand its character, usability that makes a site easy to use, and business goals that keep the design useful."
+  ],
+  founder: { name: "Pri", bio: "[OWNER TO CONFIRM] Write your own introduction here: who you are, what you care about, and how you work with clients." },
+  services: [
+    { name: "Business Website Design", desc: "A complete multi-page website that presents your business clearly and builds trust with new customers.", items: ["Page structure and design", "Responsive build", "Basic SEO setup"], price: "Price on request [OWNER TO CONFIRM]", cta: "Discuss a website" },
+    { name: "Landing Pages", desc: "A focused single page built around one goal, such as a launch, an offer or enquiries.", items: ["Page copy layout", "Responsive build", "Enquiry form"], price: "Price on request [OWNER TO CONFIRM]", cta: "Plan a landing page" },
+    { name: "Website Redesign", desc: "A refresh of an existing site so it looks current, loads well and works on every screen.", items: ["Review of the current site", "New design direction", "Responsive optimisation"], price: "Price on request [OWNER TO CONFIRM]", cta: "Request a redesign" },
+    { name: "AI-Assisted Website Creation", desc: "Faster drafting and iteration using AI tools, with every page reviewed and refined by a person.", items: ["AI-assisted drafts", "Human design review", "Handover guidance"], price: "Price on request [OWNER TO CONFIRM]", cta: "Ask about this service" },
+    { name: "Digital Branding & Creative Design", desc: "Visual direction for your online presence: colour, type and layout that feel like one brand.", items: ["Colour and type direction", "Layout style guide", "Social-ready visuals"], price: "Price on request [OWNER TO CONFIRM]", cta: "Talk branding" }
+  ],
+  projects: [
+    { id: "jewellery", title: "Luxury Jewellery Website", cat: "E-commerce Concepts", kind: "Concept", color: "#8A765E", desc: "A concept store layout exploring large product imagery, quiet typography and a simple path to enquiry.", link: "" },
+    { id: "cafe", title: "Premium Café Website", cat: "Business Websites", kind: "Concept", color: "#171717", desc: "A concept site for a neighbourhood café with menu, story and opening hours presented clearly on mobile.", link: "" },
+    { id: "skincare", title: "Skincare Brand Website", cat: "Landing Pages", kind: "Concept", color: "#6b5d4a", desc: "A concept landing page for a skincare line focused on calm layout, ingredients and a single call to action.", link: "" }
+  ],
+  process: [
+    { t: "Discovery & Requirements", d: "We learn about your business, audience and goals." },
+    { t: "Design Direction", d: "We agree on look, layout and content structure." },
+    { t: "Website Development", d: "We build a responsive, fast website." },
+    { t: "Testing & Revisions", d: "We test on phones and desktops and refine with your feedback." },
+    { t: "Launch & Handover", d: "We publish the site and show you how to manage it." }
+  ],
+  why: [
+    { t: "Founder-led", d: "You work directly with the person designing your site." },
+    { t: "Clear communication", d: "Defined steps, so you always know what comes next." },
+    { t: "Designed to be used", d: "Mobile-first, accessible and focused on your goals." }
+  ],
+  budgets: ["Not sure yet", "Discuss with me", "[OWNER TO CONFIRM — add ranges]"],
+  privacy: [
+    ["Draft notice", "[OWNER TO CONFIRM] This is a draft template. It has not been legally reviewed. Have it checked for the laws that apply to you before relying on it."],
+    ["Information we collect", "Only what you type into the contact form: name, business or brand name, email, project type, optional budget, project description and optional deadline."],
+    ["Why we collect it", "To reply to your enquiry and discuss your project. We do not use it for anything else."],
+    ["Storage and retention", "[OWNER TO CONFIRM] This site has no database: your enquiry is sent by email through your own email app and is kept in our inbox. State how long you keep enquiries."],
+    ["Third-party services", "This page loads fonts from Google Fonts, which may receive your IP address. [OWNER TO CONFIRM] List any other services you add."],
+    ["Security", "We limit what we collect and do not store passwords or payment details through this site. No method of transmission is completely secure."],
+    ["Your requests", "You can ask to see, correct or delete the information you sent us by emailing the address below."],
+    ["Privacy contact", "[OWNER TO CONFIRM] Add the email address for privacy questions."]
+  ],
+  terms: [
+    ["Draft notice", "[OWNER TO CONFIRM] Draft only. Have it reviewed before publishing."],
+    ["Service scope", "[OWNER TO CONFIRM] Each project’s scope, deliverables and timeline are agreed in writing before work starts."],
+    ["Approvals", "[OWNER TO CONFIRM] Describe how and when you need client sign-off at each stage."],
+    ["Revisions", "[OWNER TO CONFIRM] State how many revision rounds are included."],
+    ["Payments", "[OWNER TO CONFIRM] State your pricing, deposit and payment schedule."],
+    ["Cancellations", "[OWNER TO CONFIRM] State what happens if a project is cancelled."],
+    ["Intellectual property", "[OWNER TO CONFIRM] State who owns the final work and when ownership transfers."],
+    ["Third-party dependencies", "[OWNER TO CONFIRM] Hosting, domains, plugins and stock assets may be provided by third parties with their own terms."],
+    ["Limitation of liability", "[OWNER TO CONFIRM] Have a professional write this section."],
+    ["Contact", "[OWNER TO CONFIRM] Add your contact details."]
+  ]
+};
+/* ===================== END OF EDITABLE CONTENT ===================== */
+
+const NAV = [["about","About"],["services","Services"],["portfolio","Work"],["process","Process"],["contact","Contact"]];
+const $ = s => document.querySelector(s);
+function el(t, a, ...k) { const e = document.createElement(t); for (const [n, v] of Object.entries(a || {})) { n === "class" ? e.className = v : n === "text" ? e.textContent = v : e.setAttribute(n, v); } k.flat().forEach(c => e.append(c)); return e; }
+const safeUrl = u => /^https?:\/\//i.test(u || "") ? u : null;
+const btn = (t, h, alt) => el("a", { class: "btn" + (alt ? " alt" : ""), href: h, text: t });
+const sec = (eb, title, ...k) => el("section", {}, el("div", { class: "wrap" }, eb ? el("p", { class: "eyebrow", text: eb }) : "", title ? el("h2", { text: title }) : "", ...k));
+const C = CONTENT;
+
+function mock() { return el("div", { class: "mock", "aria-hidden": "true" }, el("div", { class: "desk" }, el("div", { class: "bar" }, el("i"), el("i"), el("i")), el("div", { class: "scr" }, el("b", { class: "l" }), el("b"), el("s"), el("b"))), el("div", { class: "phone" }, el("b", { class: "l" }), el("b"), el("s"))); }
+function services(full) { return el("div", { class: "grid" }, C.services.map(s => el("article", { class: "card" }, el("h3", { text: s.name }), el("p", { text: s.desc }), full ? [el("ul", { class: "d" }, s.items.map(i => el("li", { text: i }))), el("p", { text: s.price }), btn(s.cta, "#/contact", true)] : ""))); }
+function cards(list) { return el("div", { class: "grid" }, list.map(p => el("a", { class: "card", href: "#/project/" + p.id, style: "text-decoration:none" }, el("div", { class: "thumb", style: "background:" + p.color, text: p.title.split(" ")[0] }), el("span", { class: "badge", text: p.kind }), el("h3", { text: p.title, style: "margin-top:12px" }), el("p", { text: p.cat })))); }
+function steps() { return el("ol", { class: "grid", style: "list-style:none;padding:0" }, C.process.map((s, i) => el("li", { class: "card" }, el("p", { class: "eyebrow", text: "Step " + (i + 1) }), el("h3", { text: s.t }), el("p", { text: s.d })))); }
+function cta() { return sec("", "Ready to begin?", el("p", { text: "Tell us about your project and we will reply by email." }), el("div", { class: "row" }, btn(C.hero.cta1, "#/contact"))); }
+
+const PAGES = {
+  "": () => [
+    el("section", {}, el("div", { class: "wrap" }, el("p", { class: "eyebrow", text: C.tagline }), el("h1", { text: C.hero.title }), el("p", { text: C.hero.text, style: "font-size:1.15rem;max-width:560px" }), el("div", { class: "row" }, btn(C.hero.cta1, "#/contact"), btn(C.hero.cta2, "#/portfolio", true)), mock())),
+    sec("Welcome", "", el("p", { text: C.intro, style: "font-size:1.15rem;max-width:720px" })),
+    sec("Services", "What we do", services(false), el("div", { class: "row" }, btn("All services", "#/services", true))),
+    sec("Selected work", "Concept projects", el("p", { text: "These are original concepts that show our design direction. They are not client work." }), cards(C.projects)),
+    sec("Process", "How we work", steps()),
+    sec("Why us", "Why House of Pri", el("div", { class: "grid" }, C.why.map(w => el("div", { class: "card" }, el("h3", { text: w.t }), el("p", { text: w.d }))))),
+    cta()
+  ],
+  about: () => [sec("About", "A founder-led studio", C.about.map(t => el("p", { text: t, style: "max-width:680px" })), el("div", { class: "card", style: "max-width:680px" }, el("h3", { text: C.founder.name }), el("p", { text: C.founder.bio }))), cta()],
+  services: () => [sec("Services", "Our services", services(true)), cta()],
+  portfolio: () => {
+    const cats = ["All", ...new Set(C.projects.map(p => p.cat))], host = el("div"), bar = el("div", { class: "filters", role: "group", "aria-label": "Filter projects" });
+    const show = c => { host.replaceChildren(cards(c === "All" ? C.projects : C.projects.filter(p => p.cat === c))); [...bar.children].forEach(b => b.setAttribute("aria-pressed", b.textContent === c)); };
+    cats.forEach(c => bar.append(el("button", { type: "button", text: c, "aria-pressed": "false" }))); bar.addEventListener("click", e => e.target.tagName === "BUTTON" && show(e.target.textContent)); show("All");
+    return [sec("Work", "Selected projects", el("p", { text: "Projects labelled Concept are demonstrations created by us, not commissioned work." }), bar, host)];
+  },
+  process: () => [sec("Process", "Our design process", steps()), cta()],
+  contact: () => [sec("Contact", "Start a project", contactForm())],
+  privacy: () => [doc("Privacy Policy", C.privacy)],
+  terms: () => [doc("Terms & Conditions", C.terms)]
+};
+function doc(t, rows) { return sec("Legal", t, el("p", { class: "note", text: "Draft — requires the owner’s input and review before publication." }), rows.map(r => el("div", {}, el("h3", { text: r[0], style: "margin-top:1.4em" }), el("p", { text: r[1], style: "max-width:680px" })))); }
+
+function contactForm() {
+  const f = el("form", { novalidate: "" }), status = el("p", { class: "note", role: "status", "aria-live": "polite", style: "display:none" });
+  const fld = (id, lab, ctl) => el("label", { for: id }, lab, ctl, el("span", { class: "err", id: id + "E" }));
+  const types = C.services.map(s => s.name).concat("Something else");
+  const sel = (id, opts, ph) => el("select", { id, name: id }, el("option", { value: "", text: ph }), opts.map(o => el("option", { value: o, text: o })));
+  f.append(
+    fld("name", "Name *", el("input", { id: "name", name: "name", autocomplete: "name", maxlength: "80", required: "" })),
+    fld("brand", "Business or brand name", el("input", { id: "brand", name: "brand", maxlength: "100" })),
+    fld("email", "Email *", el("input", { id: "email", name: "email", type: "email", autocomplete: "email", maxlength: "120", required: "" })),
+    fld("type", "Type of project *", sel("type", types, "Select…")),
+    fld("budget", "Budget range (optional)", sel("budget", C.budgets, "Select…")),
+    fld("msg", "Project description *", el("textarea", { id: "msg", name: "msg", rows: "5", maxlength: "2000", required: "" })),
+    fld("date", "Preferred deadline (optional)", el("input", { id: "date", name: "date", type: "date" })),
+    el("div", { class: "hp", "aria-hidden": "true" }, el("input", { id: "site", name: "site", tabindex: "-1", autocomplete: "off" })),
+    el("label", { for: "consent", style: "display:flex;gap:10px;align-items:flex-start" }, el("input", { id: "consent", name: "consent", type: "checkbox", style: "width:auto;margin-top:6px" }), el("span", {}, "I agree to the ", el("a", { href: "#/privacy", text: "Privacy Policy" }), ". *")),
+    el("span", { class: "err", id: "consentE" }),
+    el("button", { class: "btn", type: "submit", text: "Prepare my enquiry" }), status
+  );
+  f.addEventListener("submit", e => {
+    e.preventDefault(); const v = id => f.elements[id].value.trim(); let ok = true;
+    const bad = (id, m) => { $("#" + id + "E").textContent = m; ok = false; }; f.querySelectorAll(".err").forEach(x => x.textContent = "");
+    if (v("name").length < 2) bad("name", "Please enter your name.");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v("email"))) bad("email", "Please enter a valid email.");
+    if (!v("type")) bad("type", "Please choose a project type.");
+    if (v("msg").length < 20) bad("msg", "Please describe your project (at least 20 characters).");
+    if (!f.elements.consent.checked) bad("consent", "Please accept the privacy policy.");
+    if (v("site")) return;
+    status.style.display = "none"; if (!ok) return;
+    const show = m => { status.textContent = m; status.style.display = "block"; };
+    if (!C.email) { show("This form cannot send yet: the studio email is not configured. Please try again later."); return; }
+    const body = ["Name: " + v("name"), "Brand: " + v("brand"), "Email: " + v("email"), "Project type: " + v("type"), "Budget: " + v("budget"), "Deadline: " + v("date"), "", v("msg")].join("\n");
+    location.href = "mailto:" + encodeURIComponent(C.email).replace("%40", "@") + "?subject=" + encodeURIComponent("Project enquiry — " + v("name")) + "&body=" + encodeURIComponent(body);
+    show("Your email app should open with the enquiry filled in. Nothing is sent until you press Send there. If it did not open, email us directly at " + C.email + ".");
+  });
+  return f;
+}
+
+function route() {
+  const h = location.hash.replace(/^#\/?/, ""), app = $("#app"); let nodes, title = C.brand;
+  if (h.startsWith("project/")) {
+    const p = C.projects.find(x => x.id === h.slice(8));
+    if (p) { const u = safeUrl(p.link); nodes = [sec(p.cat, p.title, el("span", { class: "badge", text: p.kind === "Concept" ? "Concept — not client work" : p.kind }), el("p", { text: p.desc, style: "margin-top:16px;max-width:680px" }), u ? btn("View project", u, true) : "", el("div", { class: "row" }, btn("Back to work", "#/portfolio", true)))]; title = p.title + " — " + C.brand; }
+  } else if (PAGES[h]) { nodes = PAGES[h](); title = (NAV.find(n => n[0] === h) || [0, h === "privacy" ? "Privacy Policy" : h === "terms" ? "Terms & Conditions" : ""])[1]; title = title ? title + " — " + C.brand : C.brand + " — Digital Creative Studio"; }
+  if (!nodes) { nodes = [sec("404", "Page not found", el("p", { text: "That page does not exist." }), btn("Back to home", "#/"))]; title = "Not found — " + C.brand; }
+  app.replaceChildren(...nodes); document.title = title; $("#links").classList.remove("open"); $("#menu").setAttribute("aria-expanded", "false"); scrollTo(0, 0); app.focus({ preventScroll: true });
+}
+$("#logo").textContent = C.brand;
+$("#links").append(...NAV.map(n => el("li", {}, el("a", { href: "#/" + n[0], text: n[1] }))));
+$("#menu").onclick = () => { const o = $("#links").classList.toggle("open"); $("#menu").setAttribute("aria-expanded", o); };
+const soc = C.social.map(s => ({ l: s.label, u: safeUrl(s.url) })).filter(s => s.u);
+$("#foot").append(el("div", { class: "grid" },
+  el("div", {}, el("div", { class: "logo", text: C.brand }), el("p", { text: C.tagline })),
+  el("div", {}, el("p", { text: C.email ? "Email: " + C.email : "Contact details: add your email in CONTENT.email" }), soc.map(s => el("p", {}, el("a", { href: s.u, rel: "noopener noreferrer", target: "_blank", text: s.l })))),
+  el("div", {}, el("p", {}, el("a", { href: "#/privacy", text: "Privacy Policy" })), el("p", {}, el("a", { href: "#/terms", text: "Terms & Conditions" })), el("p", { text: "© " + new Date().getFullYear() + " " + C.brand + ". Sample projects are concepts, not client work." }))));
+addEventListener("hashchange", route); route();
+</script>
+</body>
+</html>
